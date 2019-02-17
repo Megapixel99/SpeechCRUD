@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
 	res.redirect("/read")
 })
 router.get("/read", function(req, res) {
-	res.sendFile(__dirname + "/Client/HTML/getUsers.html")
+	res.sendFile(__dirname + "/Client/HTML/readUsers.html")
 })
 router.get("/create", function(req, res) {
 	res.sendFile(__dirname + "/Client/HTML/createUser.html")
