@@ -1,5 +1,5 @@
 const express = require("express");
-const robot = require("kbm-robot");
+// const robot = require("kbm-robot");
 const router = express.Router();
 const mongoose = require('mongoose');
 const clientSessions = require('client-sessions');
@@ -13,7 +13,7 @@ const UserShm = mongoose.Schema({
 	Name: String
 });
 const User = mongoose.model('UserList', UserShm);
-robot.startJar()
+//robot.startJar()
 router.get("/", function(req, res) {
 	res.redirect("/read")
 })
