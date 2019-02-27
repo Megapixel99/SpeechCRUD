@@ -1,4 +1,5 @@
 const express = require("express");
+const robot = require("kbm-robot");
 const router = express.Router();
 const mongoose = require('mongoose');
 const clientSessions = require('client-sessions');
@@ -12,6 +13,7 @@ const UserShm = mongoose.Schema({
 	Name: String
 });
 const User = mongoose.model('UserList', UserShm);
+robot.startJar()
 router.get("/", function(req, res) {
 	res.redirect("/read")
 })
@@ -105,5 +107,21 @@ router.delete("/delete/:name", function(req, res) {
 			res.send("Name: " + name + " not found.");
 		}
 	});
+})
+router.post("/leftpressed", function(req, res) {
+	robot.press("LEFT")
+		.mouseMove(100, 100)
+		.sleep(40)
+		.release("LEFT")
+		.go()
+	res.send("")
+})
+router.post("/rightpressed", function(req, res) {
+	robot.press("RIGHT")
+		.mouseMove(200, 200)
+		.sleep(40)
+		.release("RIGHT")
+		.go()
+	res.send("")
 })
 module.exports = router
