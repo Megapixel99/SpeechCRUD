@@ -9,6 +9,7 @@
     "formidable": "^1.2.1",
     "fs": "^0.0.1-security",
     "kbm-robot": "0.0.4",
+    "keycode": "^2.2.0",
     "mongoose": "^5.1.5",
     "save": "^2.3.3",
     "start": "^5.1.0"
